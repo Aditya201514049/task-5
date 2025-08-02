@@ -110,10 +110,10 @@ export default function ControlPanel({
         </div>
       </div>
       
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6">
         
         {/* Language/Region Selection */}
-        <div className="space-y-2">
+        <div className="space-y-2 lg:col-span-3">
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">
             Language/Region
           </label>
@@ -131,7 +131,7 @@ export default function ControlPanel({
         </div>
 
         {/* Seed Input */}
-        <div className="space-y-2">
+        <div className="space-y-2 lg:col-span-3">
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">
             Seed Value
           </label>
@@ -147,7 +147,7 @@ export default function ControlPanel({
             />
             <button
               onClick={handleRandomSeed}
-              className="px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-md transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+              className="px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-md transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 whitespace-nowrap"
             >
               �� Random
             </button>
@@ -160,7 +160,7 @@ export default function ControlPanel({
         </div>
 
         {/* Average Likes Slider */}
-        <div className="space-y-2">
+        <div className="space-y-2 lg:col-span-4">
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">
             Average Likes per Book: {parameters.avgLikes}
           </label>
@@ -181,7 +181,7 @@ export default function ControlPanel({
         </div>
 
         {/* Average Reviews Input */}
-        <div className="space-y-2">
+        <div className="space-y-2 lg:col-span-2">
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">
             Average Reviews per Book
           </label>
