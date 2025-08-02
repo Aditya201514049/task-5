@@ -110,10 +110,11 @@ export default function ControlPanel({
         </div>
       </div>
       
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6">
+      {/* Row 1: Language/Region and Seed Value */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
         
         {/* Language/Region Selection */}
-        <div className="space-y-2 lg:col-span-3">
+        <div className="space-y-2">
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">
             Language/Region
           </label>
@@ -131,7 +132,7 @@ export default function ControlPanel({
         </div>
 
         {/* Seed Input */}
-        <div className="space-y-2 lg:col-span-3">
+        <div className="space-y-2">
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">
             Seed Value
           </label>
@@ -158,9 +159,13 @@ export default function ControlPanel({
             </p>
           )}
         </div>
+      </div>
 
+      {/* Row 2: Average Likes and Average Reviews */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        
         {/* Average Likes Slider */}
-        <div className="space-y-2 lg:col-span-4">
+        <div className="space-y-2">
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">
             Average Likes per Book: {parameters.avgLikes}
           </label>
@@ -181,7 +186,7 @@ export default function ControlPanel({
         </div>
 
         {/* Average Reviews Input */}
-        <div className="space-y-2 lg:col-span-2">
+        <div className="space-y-2">
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">
             Average Reviews per Book
           </label>
@@ -199,7 +204,6 @@ export default function ControlPanel({
             Fractional values work probabilistically
           </p>
         </div>
-
       </div>
 
       {/* Current Parameters Display */}
