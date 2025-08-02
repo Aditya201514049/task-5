@@ -99,7 +99,7 @@ export default function BookTable({ parameters }) {
         <tbody>
           {books.map((book, idx) => (
             <BookRow
-              key={book.index}
+              key={`${book.isbn}-${book.index}`}
               book={book}
               isExpanded={expandedIndex === book.index}
               onToggleExpand={handleToggleExpand}

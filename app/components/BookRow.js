@@ -33,7 +33,7 @@ export default function BookRow({ book, isExpanded, onToggleExpand }) {
           <div className="flex items-center space-x-3">
             <div className="flex-shrink-0">
               <img
-                src={imageError ? '/placeholder-book.png' : book.coverUrl}
+                src={imageError ? 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjQwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZGRkIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzk5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkJvb2sgQ292ZXI8L3RleHQ+PC9zdmc+' : book.coverUrl}
                 alt={`Cover of ${book.title}`}
                 className="w-12 h-16 object-cover rounded shadow-sm"
                 onError={() => setImageError(true)}
