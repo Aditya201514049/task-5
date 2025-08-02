@@ -78,7 +78,7 @@ export default function BookGallery({ parameters }) {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-6">
         {books.map((book, idx) => (
           <BookCard
-            key={`${book.isbn}-${book.index}`}
+            key={book.id}
             book={book}
             onClick={() => handleBookClick(book)}
             ref={idx === books.length - 1 ? lastCardRef : null}
