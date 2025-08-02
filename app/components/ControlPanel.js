@@ -5,7 +5,9 @@ import { generateRandomSeed, getLocaleDisplayName, getLocaleFlag } from '@/lib/u
 
 export default function ControlPanel({ 
   onParametersChange, 
-  initialParams = {} 
+  initialParams = {},
+  viewMode,
+  onViewModeChange
 }) {
   const [parameters, setParameters] = useState({
     seed: initialParams.seed || 42,
@@ -68,9 +70,38 @@ export default function ControlPanel({
 
   return (
     <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-6">
-      <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
-        Book Store Parameters
-      </h2>
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
+        <h2 className="text-xl font-semibold text-gray-900 dark:text-white">
+          Book Store Parameters
+        </h2>
+        
+        {/* View Mode Toggle */}
+        <div className="flex items-center space-x-2 mt-2 sm:mt-0">
+          <span className="text-sm text-gray-600 dark:text-gray-400">View:</span>
+          <div className="flex bg-gray-100 dark:bg-gray-700 rounded-lg p-1">
+            <button
+              onClick={() => onViewModeChange('table')}
+              className={`px-3 py-1 text-sm font-medium rounded-md transition-colors duration-200 ${
+                viewMode === 'table'
+                  ? 'bg-white dark:bg-gray-600 text-gray-900 dark:text-white shadow-sm'
+                  : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white'
+              }`}
+            >
+              📋 Table
+            </button>
+            <button
+              onClick={() => onViewModeChange('gallery')}
+              className={`px-3 py-1 text-sm font-medium rounded-md transition-colors duration-200 ${
+                viewMode === 'gallery'
+                  ? 'bg-white dark:bg-gray-600 text-gray-900 dark:text-white shadow-sm'
+                  : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white'
+              }`}
+            >
+              🖼️ Gallery
+            </button>
+          </div>
+        </div>
+      </div>
       
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         

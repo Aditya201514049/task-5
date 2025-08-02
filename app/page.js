@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import ControlPanel from './components/ControlPanel';
 import BookTable from './components/BookTable';
+import BookGallery from './components/BookGallery';
 
 export default function Home() {
   // State for book generation parameters
@@ -13,12 +14,20 @@ export default function Home() {
     avgReviews: 3,
   });
 
+  // State for view mode
+  const [viewMode, setViewMode] = useState('table');
+
   // Handler for parameter changes from ControlPanel
   const handleParametersChange = (newParams) => {
     setParameters((prev) => ({
       ...prev,
       ...newParams,
     }));
+  };
+
+  // Handler for view mode changes
+  const handleViewModeChange = (mode) => {
+    setViewMode(mode);
   };
 
   return (
@@ -31,9 +40,15 @@ export default function Home() {
         <ControlPanel
           onParametersChange={handleParametersChange}
           initialParams={parameters}
+          viewMode={viewMode}
+          onViewModeChange={handleViewModeChange}
         />
-        {/* Book Table */}
-        <BookTable parameters={parameters} />
+        {/* Book Display */}
+        {viewMode === 'table' ? (
+          <BookTable parameters={parameters} />
+        ) : (
+          <BookGallery parameters={parameters} />
+        )}
         <footer className="mt-12 text-center text-xs text-gray-400 dark:text-gray-600">
           &copy; {new Date().getFullYear()} Book Store Generator &mdash; Powered by Next.js & Faker.js
         </footer>
