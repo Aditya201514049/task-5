@@ -12,7 +12,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Book Store Data Generato",
+  title: "Book Store Data Generator",
   description: "Generate mock book data with customizable parameters using Next.js and Faker.js",
 };
 
