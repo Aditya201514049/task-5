@@ -217,7 +217,7 @@ The application can be deployed to any platform that supports Next.js:
 
 ## 📄 License
 
-This project is licensed under the MIT License.
+This project is licensed under the Aditya Singha.
 
 ## 🤝 Contributing
 
