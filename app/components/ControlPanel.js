@@ -185,24 +185,25 @@ export default function ControlPanel({
           </div>
         </div>
 
-        {/* Average Reviews Input */}
+        {/* Average Reviews Slider */}
         <div className="space-y-2">
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">
-            Average Reviews per Book
+            Average Reviews per Book: {parameters.avgReviews}
           </label>
           <input
-            type="number"
+            type="range"
             min="0"
             max="10"
             step="0.1"
             value={parameters.avgReviews}
-            onChange={(e) => handleInputChange('avgReviews', e.target.value)}
-            className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white"
-            placeholder="0.0 - 10.0"
+            onChange={(e) => handleSliderChange('avgReviews', e.target.value)}
+            className="w-full h-2 bg-gray-200 dark:bg-gray-700 rounded-lg appearance-none cursor-pointer slider"
           />
-          <p className="text-xs text-gray-500 dark:text-gray-400">
-            Fractional values work probabilistically
-          </p>
+          <div className="flex justify-between text-xs text-gray-500 dark:text-gray-400">
+            <span>0</span>
+            <span>5</span>
+            <span>10</span>
+          </div>
         </div>
       </div>
 
